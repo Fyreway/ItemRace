@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "itemrace",
+  "version": "${version}",
+  "name": "ItemRace",
+  "description": "For use on Evolvia SMP",
+  "authors": ["Fyreway"],
+  "contact": {
+    "repo": "https://github.com/school/ItemRace"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/itemrace/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.fyreway.minecraft.itemrace.client.ItemRaceClient"
+    ],
+    "main": [
+      "com.fyreway.minecraft.itemrace.ItemRace"
+    ]
+  },
+  "mixins": [
+    "itemrace.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

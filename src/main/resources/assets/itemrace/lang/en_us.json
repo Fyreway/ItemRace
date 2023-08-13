@@ -1,0 +1,8 @@
+{
+  "command.superenchant.error.invalid_item": "Invalid item in main hand",
+  "command.superenchant.error.no_medal": "No gold medal to use",
+  "command.superenchant.success": "Super-enchanted %1$s with %2$s",
+  "item.itemrace.gold_medal": "Gold Medal",
+  "item.itemrace.super_enchantment_catalyst": "Super Enchantment Catalyst",
+  "message.itemrace.player_won": "%s has won!"
+}

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DRC",
+    "TET",
+    "CRD"
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "R": {
+      "item": "minecraft:respawn_anchor"
+    },
+    "C": {
+      "item": "minecraft:end_crystal"
+    },
+    "T": {
+      "item": "minecraft:enchanting_table"
+    },
+    "E": {
+      "item": "minecraft:emerald_block"
+    }
+  },
+  "result": {
+    "item": "itemrace:super_enchantment_catalyst",
+    "count": 1
+  }
+}
