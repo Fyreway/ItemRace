@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CAC",
+    "ONE",
+    "CRC"
+  ],
+  "key": {
+    "C": {
+      "item": "itemrace:super_enchantment_catalyst"
+    },
+    "A": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "O": {
+      "item": "minecraft:conduit"
+    },
+    "N": {
+      "item": "minecraft:netherite_block"
+    },
+    "E": {
+      "item": "minecraft:dragon_head"
+    },
+    "R": {
+      "item": "minecraft:music_disc_relic"
+    }
+  },
+  "result": {
+    "item": "itemrace:orb_of_regret",
+    "count": 1
+  }
+}

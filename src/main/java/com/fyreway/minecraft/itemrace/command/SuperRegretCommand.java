@@ -20,47 +20,42 @@ import net.minecraft.text.Text;
 
 import java.util.Map;
 
-import static com.fyreway.minecraft.itemrace.enchantment.ItemRaceEnchantmentHelper.canSuperEnchant;
+import static com.fyreway.minecraft.itemrace.enchantment.ItemRaceEnchantmentHelper.canSuperRegret;
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
 
-public class SuperEnchantCommand {
+public class SuperRegretCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher,
                                 CommandRegistryAccess registryAccess) {
-        dispatcher.register(literal("superenchant")
+        dispatcher.register(literal("superregret")
                 .then(argument("enchantment", RegistryEntryArgumentType.registryEntry(registryAccess, RegistryKeys.ENCHANTMENT))
-                                .executes(ctx -> SuperEnchantCommand.execute(ctx.getSource(), RegistryEntryArgumentType.getEnchantment(ctx, "enchantment")))));
+                        .executes(ctx -> SuperRegretCommand.execute(ctx.getSource(), RegistryEntryArgumentType.getEnchantment(ctx, "enchantment")))));
     }
 
-    private static int execute(ServerCommandSource source,
-                               RegistryEntry<Enchantment> entry) throws CommandSyntaxException {
+    private static int execute(ServerCommandSource source, RegistryEntry<Enchantment> entry) throws CommandSyntaxException {
         ServerPlayerEntity player = source.getPlayerOrThrow();
         PlayerInventory inv = player.getInventory();
         Enchantment enchantment = entry.value();
 
-        int slot = inv.getSlotWithStack(new ItemStack(ItemRaceItems.GOLD_MEDAL));
+        int slot = inv.getSlotWithStack(new ItemStack(ItemRaceItems.ORB_OF_REGRET));
 
         if (slot != -1) {
             ItemStack mainHandStack = inv.getMainHandStack();
             if (mainHandStack.isEmpty() || (!mainHandStack.isEnchantable() && !mainHandStack.hasEnchantments()))
-                throw new CommandException(Text.translatable("command.superenchant.error.invalid_item"));
-            if (!canSuperEnchant(mainHandStack, enchantment))
-                throw new CommandException(Text.translatable("command.superenchant.error.invalid_enchantment", mainHandStack.getName(), enchantment.getName(1)));
-            if (EnchantmentHelper.getLevel(enchantment, mainHandStack) == 0)
-                mainHandStack.addEnchantment(enchantment, 1);
-            else {
-                Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(mainHandStack);
-                enchantments.put(enchantment, enchantments.get(enchantment) + 1);
-                EnchantmentHelper.set(enchantments, mainHandStack);
-            }
+                throw new CommandException(Text.translatable("command.superregret.error.invalid_item"));
+            if (!canSuperRegret(mainHandStack, enchantment))
+                throw new CommandException(Text.translatable("command.superregret.error.invalid_enchantment", enchantment.getName(1), mainHandStack.getName()));
+            Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(mainHandStack);
+            enchantments.put(enchantment, enchantments.get(enchantment) - 1);
+            EnchantmentHelper.set(enchantments, mainHandStack);
             inv.removeStack(slot);
-            player.playSound(SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.MASTER, 5f, 1f);
+            player.playSound(SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.MASTER, 5f, 1f);
             player.sendMessage(
-                    Text.translatable("command.superenchant.success",
-                            mainHandStack.getName(),
-                            enchantment.getName(EnchantmentHelper.getLevel(enchantment, mainHandStack))));
+                    Text.translatable("command.superregret.success",
+                            enchantment.getName(1),
+                            mainHandStack.getName()));
         } else
-            throw new CommandException(Text.translatable("command.superenchant.error.no_medal"));
+            throw new CommandException(Text.translatable("command.superregret.error.no_orb"));
         return 0;
     }
 }

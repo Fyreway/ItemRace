@@ -5,9 +5,13 @@ import com.fyreway.minecraft.itemrace.state.RaceState;
 import item.ItemRaceItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ItemRace implements ModInitializer {
     public static final String MOD_ID = "itemrace";
+    @SuppressWarnings("unused")
+    public static final Logger LOG = LogManager.getLogger("ItemRace");
 
     /**
      * Runs the mod initializer.

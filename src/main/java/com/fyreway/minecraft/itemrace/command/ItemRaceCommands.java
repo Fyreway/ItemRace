@@ -4,6 +4,9 @@ import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 
 public class ItemRaceCommands {
     public static void registerAll() {
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> SuperEnchantCommand.register(dispatcher, registryAccess));
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            SuperEnchantCommand.register(dispatcher, registryAccess);
+            SuperRegretCommand.register(dispatcher, registryAccess);
+        });
     }
 }

@@ -14,6 +14,7 @@ public class ItemRaceItems {
     public static final Item GOLD_MEDAL = add("gold_medal", new GoldMedalItem());
     public static final Item SUPER_ENCHANTMENT_CATALYST =
             add("super_enchantment_catalyst", new SuperEnchantmentCatalyst());
+    public static final Item ORB_OF_REGRET = add("orb_of_regret", new OrbOfRegret());
 
     private static Item add(String name, Item item) {
         map.put(name, item);

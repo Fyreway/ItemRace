@@ -1,8 +1,14 @@
 {
+  "command.superenchant.error.invalid_enchantment": "%1$s cannot be super-enchanted with %2$s!",
   "command.superenchant.error.invalid_item": "Invalid item in main hand",
   "command.superenchant.error.no_medal": "No gold medal to use",
   "command.superenchant.success": "Super-enchanted %1$s with %2$s",
+  "command.superregret.error.invalid_enchantment": "%1$s cannot be super-regretted from %2$s!",
+  "command.superregret.error.invalid_item": "Invalid item in main hand",
+  "command.superregret.error.no_orb": "No orb of regret to use",
+  "command.superregret.success": "Super-regretted %1$s from %2$s",
   "item.itemrace.gold_medal": "Gold Medal",
+  "item.itemrace.orb_of_regret": "Orb of Regret",
   "item.itemrace.super_enchantment_catalyst": "Super Enchantment Catalyst",
   "message.itemrace.player_won": "%s has won!"
 }
