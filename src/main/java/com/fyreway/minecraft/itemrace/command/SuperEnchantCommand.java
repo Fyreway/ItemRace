@@ -2,7 +2,7 @@ package com.fyreway.minecraft.itemrace.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import item.ItemRaceItems;
+import com.fyreway.minecraft.itemrace.item.ItemRaceItems;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.command.argument.RegistryEntryArgumentType;

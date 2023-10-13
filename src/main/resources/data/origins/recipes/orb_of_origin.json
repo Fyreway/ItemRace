@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RGR",
+    "SWD",
+    "RGR"
+  ],
+  "key": {
+    "R": {
+      "item": "itemrace:orb_of_regret"
+    },
+    "G": {
+      "item": "itemrace:gold_medal"
+    },
+    "S": {
+      "item": "itemrace:depth_star"
+    },
+    "W": {
+      "item": "itemrace:warden_essence"
+    },
+    "D": {
+      "item": "itemrace:deepslate_depth_star"
+    }
+  },
+  "result": {
+    "item": "origins:orb_of_origin",
+    "count": 1
+  }
+}

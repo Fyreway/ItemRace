@@ -2,7 +2,7 @@ package com.fyreway.minecraft.itemrace;
 
 import com.fyreway.minecraft.itemrace.command.ItemRaceCommands;
 import com.fyreway.minecraft.itemrace.state.RaceState;
-import item.ItemRaceItems;
+import com.fyreway.minecraft.itemrace.item.ItemRaceItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import org.apache.logging.log4j.LogManager;

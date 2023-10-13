@@ -1,7 +1,7 @@
 package com.fyreway.minecraft.itemrace.mixin;
 
 import com.fyreway.minecraft.itemrace.state.RaceState;
-import item.ItemRaceItems;
+import com.fyreway.minecraft.itemrace.item.ItemRaceItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;

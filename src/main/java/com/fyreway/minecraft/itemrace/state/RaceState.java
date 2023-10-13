@@ -12,6 +12,8 @@ import java.util.Objects;
 public class RaceState extends PersistentState {
     private String raceWinner = "";
 
+    private static final Type<RaceState> type = new Type<>(RaceState::new, RaceState::createFromNbt, null);
+
     public String getRaceWinner() {
         return raceWinner;
     }
@@ -36,6 +38,7 @@ public class RaceState extends PersistentState {
         PersistentStateManager manager = Objects.requireNonNull(
                 server.getWorld(World.OVERWORLD)).getPersistentStateManager();
 
-        return manager.getOrCreate(RaceState::createFromNbt, RaceState::new, ItemRace.MOD_ID);
+//        return manager.getOrCreate(RaceState::createFromNbt, RaceState::new, ItemRace.MOD_ID);
+        return manager.getOrCreate(type, ItemRace.MOD_ID);
     }
 }

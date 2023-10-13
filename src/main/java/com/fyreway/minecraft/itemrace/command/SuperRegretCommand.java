@@ -2,21 +2,24 @@ package com.fyreway.minecraft.itemrace.command;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
-import item.ItemRaceItems;
+import com.fyreway.minecraft.itemrace.item.ItemRaceItems;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.command.argument.RegistryEntryArgumentType;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.util.math.Vec3d;
 
 import java.util.Map;
 
@@ -54,6 +57,12 @@ public class SuperRegretCommand {
                     Text.translatable("command.superregret.success",
                             enchantment.getName(1),
                             mainHandStack.getName()));
+            ItemStack goldMedalStack = new ItemStack(ItemRaceItems.GOLD_MEDAL);
+            if (!inv.insertStack(goldMedalStack)) {
+                Vec3d pos = player.getPos();
+                ServerWorld world = player.getServerWorld();
+                world.spawnEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), goldMedalStack));
+            }
         } else
             throw new CommandException(Text.translatable("command.superregret.error.no_orb"));
         return 0;
