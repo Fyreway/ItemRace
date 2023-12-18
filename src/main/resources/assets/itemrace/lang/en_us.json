@@ -7,6 +7,8 @@
   "command.superregret.error.invalid_item": "Invalid item in main hand",
   "command.superregret.error.no_orb": "No orb of regret to use",
   "command.superregret.success": "Super-regretted %1$s from %2$s",
+  "item.itemrace.deepslate_depth_star": "Deepslate Depth Star",
+  "item.itemrace.depth_star": "Depth Star",
   "item.itemrace.gold_medal": "Gold Medal",
   "item.itemrace.orb_of_regret": "Orb of Regret",
   "item.itemrace.super_enchantment_catalyst": "Super Enchantment Catalyst",

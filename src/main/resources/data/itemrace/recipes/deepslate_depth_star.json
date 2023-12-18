@@ -33,5 +33,9 @@
     "L": {
       "item": "minecraft:deepslate_lapis_ore"
     }
+  },
+  "result": {
+    "item": "itemrace:deepslate_depth_star",
+    "count": 1
   }
 }

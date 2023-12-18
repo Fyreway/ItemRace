@@ -33,5 +33,9 @@
     "L": {
       "item": "minecraft:lapis_ore"
     }
+  },
+  "result": {
+    "item": "itemrace:depth_star",
+    "count": 1
   }
 }

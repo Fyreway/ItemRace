@@ -6,6 +6,6 @@ import net.minecraft.util.Rarity;
 
 public class SuperEnchantmentCatalystItem extends Item {
     public SuperEnchantmentCatalystItem() {
-        super(new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(1).fireproof());
+        super(new FabricItemSettings().rarity(Rarity.UNCOMMON).maxCount(16).fireproof());
     }
 }
