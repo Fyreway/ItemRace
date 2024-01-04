@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NCN",
+    "ECD",
+    "NCN"
+  ],
+  "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "C": {
+      "item": "itemrace:super_enchantment_catalyst"
+    },
+    "E": {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    "D": {
+      "tag": "itemrace:depth_stars"
+    }
+  },
+  "result": {
+    "item": "itemrace:mending_token",
+    "count": 1
+  }
+}
